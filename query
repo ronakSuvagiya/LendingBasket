@@ -1,0 +1,51 @@
+CREATE SCHEMA `admin_panel` ;
+
+INSERT INTO `admin_panel`.`product_master` (`id`, `name`) VALUES ('1', 'Loan');
+INSERT INTO `admin_panel`.`product_master` (`id`, `name`) VALUES ('2', 'Legal');
+INSERT INTO `admin_panel`.`product_master` (`id`, `name`) VALUES ('3', 'Financial');
+
+INSERT INTO `admin_panel`.`category_master` (`id`, `name`, `product_id`) VALUES ('1', 'Home Loan', '1');
+INSERT INTO `admin_panel`.`category_master` (`id`, `name`, `product_id`) VALUES ('2', 'Car loan', '1');
+INSERT INTO `admin_panel`.`category_master` (`id`, `charge`, `name`, `product_id`) VALUES ('3', '500', 'Rent Aggriment', '2');
+INSERT INTO `admin_panel`.`category_master` (`id`, `charge`, `name`, `product_id`) VALUES ('4', '250', 'Pancard', '2');
+
+INSERT INTO `admin_panel`.`loan_subcategory` (`id`, `name`, `category_id`) VALUES ('1', 'New Home Loan', '1');
+INSERT INTO `admin_panel`.`loan_subcategory` (`id`, `name`, `category_id`) VALUES ('2', 'Top-up Home Loan', '1');
+INSERT INTO `admin_panel`.`loan_subcategory` (`id`, `name`, `category_id`) VALUES ('3', 'New car Loan', '2');
+
+INSERT INTO `admin_panel`.`document_master` (`id`, `is_active`, `name`) VALUES ('1', '1', 'Adhdhar Card');
+INSERT INTO `admin_panel`.`document_master` (`id`, `is_active`, `name`) VALUES ('2', '1', 'Pancard');
+
+
+INSERT INTO `admin_panel`.`product_document` (`id`, `doc_id`, `loan_subcategory_id`, `category_id`) VALUES ('1', '1', '1', '1');
+INSERT INTO `admin_panel`.`product_document` (`id`, `doc_id`, `loan_subcategory_id`, `category_id`) VALUES ('2', '2', '1', '1');
+INSERT INTO `admin_panel`.`product_document` (`id`, `doc_id`, `loan_subcategory_id`, `category_id`) VALUES ('3', '1', '2', '1');
+INSERT INTO `admin_panel`.`product_document` (`id`, `doc_id`, `loan_subcategory_id`, `category_id`) VALUES ('4', '2', '2', '1');
+INSERT INTO `admin_panel`.`product_document` (`id`, `doc_id`, `category_id`) VALUES ('5', '1', '4');
+
+INSERT INTO `admin_panel`.`state_master` (`id`, `state_name`) VALUES ('1', 'Gujarat');
+
+INSERT INTO `admin_panel`.`city_master` (`id`, `city_name`, `state_id`) VALUES ('1', 'Surat', '1');
+INSERT INTO `admin_panel`.`city_master` (`id`, `city_name`, `state_id`) VALUES ('2', 'Baroda', '1');
+INSERT INTO `admin_panel`.`city_master` (`id`, `city_name`, `state_id`) VALUES ('3', 'ahemabada', '1');
+
+
+INSERT INTO `admin_panel`.`user_master` (`id`, `type`, `adderss`, `create_by`, `dob`, `email`, `first_name`, `last_name`, `mobile`, `password`, `city_id`, `state_id`) VALUES ('1', '0', 'Sapna soc', '2018-10-24', '1999-09-07', 'ronaksuvagiya40@gmail.com', 'Ronak', 'Suvagiya', '8866879099', 'Rnk@gmail001', '1', '1');
+INSERT INTO `admin_panel`.`user_master` (`id`, `type`, `adderss`, `create_by`, `dob`, `email`, `first_name`, `last_name`, `mobile`, `password`, `city_id`, `state_id`) VALUES ('2', '0', 'parimal soc', '2018-10-20', '1998-06-05', 'ronaksuvagiya4000@gmail.com', 'Malay', 'Khachhadiya', '9979263852', 'ronak.suvagiya', '1', '1');
+
+INSERT INTO `admin_panel`.`bank_master` (`id`, `file_charge`, `name`, `loan_subcategory_id`) VALUES ('1', '500', 'SBI', '1');
+INSERT INTO `admin_panel`.`bank_master` (`id`, `file_charge`, `name`, `loan_subcategory_id`) VALUES ('2', '600', 'BOB', '1');
+INSERT INTO `admin_panel`.`bank_master` (`id`, `file_charge`, `name`, `loan_subcategory_id`) VALUES ('3', '350', 'Dena Bank', '2');
+INSERT INTO `admin_panel`.`bank_master` (`id`, `file_charge`, `name`, `loan_subcategory_id`) VALUES ('4', '400', 'Axis Bank', '3');
+
+
+INSERT INTO `admin_panel`.`user_subscription` (`id`, `create_by`, `create_on`, `loan_amount`, `appliction_status`, `bank_id`, `category_id`, `loan_subcategory_id`, `user_id`) VALUES ('1', '', '2018-10-24', '5000000', '1', '1', '1', '1', '1');
+
+
+INSERT INTO `admin_panel`.`appliction_status` (`id`, `name`) VALUES ('1', 'Pendding');
+INSERT INTO `admin_panel`.`appliction_status` (`id`, `name`) VALUES ('2', 'Proess');
+INSERT INTO `admin_panel`.`appliction_status` (`id`, `name`) VALUES ('3', 'In Bank');
+INSERT INTO `admin_panel`.`appliction_status` (`id`, `name`) VALUES ('4', 'Complate');
+
+
+INSERT INTO `admin_panel`.`inquiry` (`id`, `email`, `is_read`, `message`, `name`) VALUES ('1', 'ronaksuvagiya', 1, 'how to applay home loan', 'Ronak');

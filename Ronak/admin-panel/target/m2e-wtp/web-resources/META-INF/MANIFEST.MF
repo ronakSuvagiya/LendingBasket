@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: admin-panel
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Shriji
+Implementation-Vendor-Id: com.example
+Build-Jdk: 1.8.0_05
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/admin-panel
+Created-By: Maven Integration for Eclipse
+
