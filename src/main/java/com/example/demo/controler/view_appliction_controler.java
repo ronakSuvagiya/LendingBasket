@@ -25,3 +25,5 @@ public class view_appliction_controler {
 		return model;
 	}	
 }
+
+//nfugdufnodplvdifuvgy
